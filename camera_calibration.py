@@ -73,7 +73,7 @@ def match_key_points(key_points: np.array) -> dict:
     # Skew
     _a13 = np.cross(a_1, a_3)
     _a23 = np.cross(a_2, a_3)
-    cos_theta = np.matmul(_a13.transpose(), _a23) / np.linalg.norm(_a13) * np.linalg.norm(_a23)
+    cos_theta = np.dot(_a13, _a23) / (np.linalg.norm(_a13) * np.linalg.norm(_a23))
     theta = np.arccos(cos_theta)
     params["Angle of skew"] = cos_theta
 
